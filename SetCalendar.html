@@ -1,0 +1,244 @@
+﻿<!---- 內文資料欄 ---->
+<div class="container">
+    <div class="page-content page-form">
+        <div class="col-lg-12">
+            <form class="form-horizontal" role="form">
+                <div class="widget">
+                    <div class="widget-head green">
+                        <h5 class="pull-left">
+                            <span class="icon-edit"></span>
+                            編輯資料
+                        </h5>
+                        <div class="goback">
+                            <button class="btn btn-default btn-sm" onclick="SeleThisMonth()" type="button">整月份</button>
+                            <button class="btn btn-default btn-sm" onclick="SelectAllWeek()" type="button">工作日</button>
+                            <button class="btn btn-default btn-sm" onclick="Weekendes()" type="button">周末</button>
+                            <button class="btn btn-default btn-sm" onclick="Add()" type="button">新增</button>
+                            <button class="btn btn-default btn-sm" onclick="Delete()" type="button">刪除</button>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="widget-body">
+                        <!--<div class="page-content page-calendar">-->
+                        <!-- Below line produces calendar. I am using FullCalendar plugin. -->
+                        <div id="NEWcalendar"></div>
+                        <input type="hidden" value="" id="hiddate" />
+                        <input type="hidden" value="" id="hidchoosen" />
+                        <!--</div>-->
+                    </div>
+                    <!--<div class="col-lg-4">
+                        <div class="page-content page-form">
+                            <form class="form-horizontal" role="form">
+                                <div class="widget">
+                                    <div class="widget-head green">
+                                        <h5 class="pull-left">
+                                            <span class="icon-edit"></span>
+                                            編輯資料
+                                        </h5>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="widget-body">
+                                        <div class="form-group">
+                                            <label class="col-lg-4 control-label">使用預設日期</label>
+                                            <div class="col-lg-8">
+                                                <div class="radio-inline"><input type="radio" class="" value="All">整月份</div>
+                                                <div class="radio-inline"><input type="radio" class="" value="work">工作日</div>
+                                                <div class="radio-inline"><input type="radio" class="" value="weekend">周末</div>
+                                                <div class="radio-inline"><input type="radio" class="" value="self">自訂</div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-4 control-label">實習起始時間</label>
+                                            <div class="col-lg-8">
+                                                <input type="text" class="form-control" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-4 control-label">實習結束時間</label>
+                                            <div class="col-lg-8">
+                                                <input type="text" class="form-control" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="widget-foot">
+                                        <button class="btn btn-default" id="btnSave" onclick="Save();" type="button">儲存</button>
+                                        <button type="button" class="btn btn-default" onclick="ClearForm();">清除</button>
+                                    </div>
+                                </div>
+                                <div class="widget">
+                                    <div class="widget-head red">
+                                        <h5 class="pull-left">
+                                            <span class="icon-edit"></span>
+                                            刪除資料
+                                        </h5>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="widget-body">
+                                        <div class="form-group">
+                                            <label class="col-lg-1 control-label"></label>
+                                            <label class="col-lg-11">刪除所有選取日期內的資料</label>
+                                        </div>
+                                    </div>
+                                    <div class="widget-foot">
+                                        <button class="btn btn-default" id="btnSave" onclick="Save();" type="button">刪除</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>-->
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div id="EditDate" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header red">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                    <h4 class="modal-title">班表異動</h4>
+                </div>
+                <!-- 必填 -->
+                <br>
+                <!-- Modal -->
+                <div class="container">
+                    <div class="alert alert-danger" id="alert" style="display: none;">
+                        <!-- alert alert-danger 套色紅色 -->
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong><a class="redstar">*</a>必填!</strong><p id="alertInfo"></p>
+                    </div>
+                </div>
+                <!-- Modal to End -->
+                <div class="modal-body">
+                    <div class="row table-responsives">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a class="redstar">*</a>
+                                職缺名稱
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <input id="txtTitle" type="text" value="職缺名稱" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a class="redstar">*</a>
+                                開始時間
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="icon-calendar "></i>
+                                    </div>
+                                    <input id="StartDate" type="text" class="datepicker form-control" placeholder="開始時間"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a class="redstar">*</a>
+                                結束時間
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="icon-calendar "></i>
+                                    </div>
+                                    <input id="EndDate" type="text" class="datepicker form-control" placeholder="結束時間" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal" aria-hidden="true" onclick="submit();">確定</button>
+                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal" aria-hidden="true">取消</button>
+                    <!--<input id="tempTitle" type="hidden" />-->
+                    <input id="tempStr" type="hidden" />
+                    <input id="tempEnd" type="hidden" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal to End -->
+    <!-- Modal -->
+    <div id="EditTime" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header red">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                    <h4 class="modal-title">班表異動</h4>
+                </div>
+                <!-- 必填 -->
+                <br>
+                <!-- Modal -->
+                <div class="container">
+                    <div class="alert alert-danger" id="alert" style="display: none;">
+                        <!-- alert alert-danger 套色紅色 -->
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong><a class="redstar">*</a>必填!</strong><p id="alertInfo"></p>
+                    </div>
+                </div>
+                <!-- Modal to End -->
+                <div class="modal-body">
+                    <div class="row table-responsives">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a class="redstar">*</a>
+                                職缺名稱
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <input id="txtTitleTime" type="text" value="職缺名稱" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a class="redstar">*</a>
+                                開始時間
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="icon-time"></i>
+                                    </div>
+                                    <input id="StartTime" data-format="hh:mm:ss" type="text" class="timepicker form-control" placeholder="開始時間" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a class="redstar">*</a>
+                                結束時間
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="icon-time"></i>
+                                    </div>
+                                    <input id="EndTime" data-format="hh:mm:ss" type="text" class="timepicker form-control" placeholder="結束時間" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal" aria-hidden="true" onclick="submitTime();">確定</button>
+                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal" aria-hidden="true">取消</button>
+                    <!--<input id="tempTitle" type="hidden" />-->
+                    <input id="submitType" type="hidden" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal to End -->
+    <div class="clearfix"></div>
+    __[S_UID]__
+    __[P_UID]__
+    __[hidGUID]__
+    __[hidTYPE]__
+</div>
+<!---- 內文資料欄 to End ---->

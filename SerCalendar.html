@@ -1,0 +1,629 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Title here -->
+		<title>環球科技大學-學生實習輔導管理平台</title>
+		<!-- Description, Keywords and Author -->
+		<meta name="description" content="Your description">
+		<meta name="keywords" content="Your,Keywords">
+		<meta name="author" content="ResponsiveWebInc">
+		<!-- Google web fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Styles -->
+		<!-- Bootstrap CSS -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!-- jQuery UI -->
+		<link href="css/jquery-ui.css" rel="stylesheet">
+		<!-- jQuery Gritter -->
+		<link href="css/jquery.gritter.css" rel="stylesheet">
+		<!-- Bootstrap Switch -->
+		<link href="css/bootstrap-switch.css" rel="stylesheet">
+		<!-- jQuery Datatables -->
+		<link href="css/jquery.dataTables.css" rel="stylesheet">
+		<!-- Rateit -->
+		<link href="css/rateit.css" rel="stylesheet">
+		<!-- jQuery prettyPhoto -->
+		<link href="css/prettyPhoto.css" rel="stylesheet">
+		<!-- Full calendar -->
+		<link href="css/fullcalendar.css" rel="stylesheet">		
+		<!-- Font awesome CSS -->
+		<link href="css/font-awesome.min.css" rel="stylesheet">		
+		<!-- Custom CSS -->
+		<link href="css/style.css" rel="stylesheet">
+		<!--[if IE]>
+			<link rel="stylesheet" type="text/css" href="css/style-ie.css" />
+		<![endif]-->
+		<!-- Favicon -->
+		<link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+		
+		<!-- YTDT CSS -->
+		<link href="css/ytdt.css" rel="stylesheet">
+		
+	</head>
+	
+	<body>
+		<!-- Quick setting box starts -->
+		<div class="quick-slide hidden-xs">
+			<!-- Content -->
+			<div class="quick-content">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<!-- Chart block -->
+							<div class="quick-chart">
+							
+								<!-- Chart -->
+								<div id="quick-chart"></div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Quick setting box ends -->
+		
+		<div class="out-container">
+			<div class="outer">
+				<!-- Sidebar starts -->
+				<div class="sidebar">
+					<!---- 左上角Logo ---->
+					<div class="logo">
+						<h1>
+							<a href="#"></a>
+						</h1>
+					</div>
+					<!---- 左上角Logo to End ---->
+					
+					<!---- 登入登出狀態列 ---->
+					<div class="sidebar-buttons text-center">
+						<!-- User button -->
+						<!--
+						<div class="btn-group">
+							<a href="../index.html" class="btn btn-black btn-xs"><i class="icon-user"></i></a>
+							<a href="../index.html" class="btn btn-danger btn-xs">回權限頁</a>
+						</div>
+						-->
+						<!-- Logout button -->
+						<div class="btn-group">
+							<a href="../login.html" class="btn btn-black btn-xs"><i class="icon-off"></i></a>
+							<a href="../login.html" class="btn btn-danger btn-xs">登出</a>
+						</div>
+					</div>
+					<!---- 登入登出狀態列 to End ---->
+					
+					<!-- Sidebar navigation starts -->
+					<div class="sidebar-dropdown"><a href="#">Navigation</a></div>
+					
+					<div class="sidey">
+						<!---- 左方列表頁 ---->
+						<ul class="nav">
+							<li class="has_submenu">
+								<a>
+									<i class="icon-desktop"></i>
+									<font>帳號資料管理</font>
+									<span class="caret pull-right"></span>
+								</a>
+								<ul>
+									<li class="">
+										<a href="#">
+											<i class="icon-double-angle-right"></i>
+											學生資料管理
+										</a>
+									</li>
+									<li class="">
+										<a href="#">
+											<i class="icon-double-angle-right"></i>
+											教職員資料管理
+										</a>
+									</li>
+									<li class="">
+										<a href="#">
+											<i class="icon-double-angle-right"></i>
+											權限群組設定
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="has_submenu">
+								<a>
+									<i class="icon-desktop"></i>
+									<font>問卷管理</font>
+									<span class="caret pull-right"></span>
+								</a>
+								<ul>
+									<li>
+										<a href="serQue_Exam.html">
+											<i class="icon-double-angle-right"></i>
+											問卷題庫設定
+										</a>
+									</li>
+									<li>
+										<a href="serQue_Use.html">
+											<i class="icon-double-angle-right"></i>
+											問卷列表設定
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="has_submenu">
+								<a>
+									<i class="icon-desktop"></i>單元上稿管理
+									<span class="caret pull-right"></span>
+								</a>
+								<ul>
+									<li>
+										<a href="#">
+											<i class="icon-double-angle-right"></i>
+											最新消息管理
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="icon-double-angle-right"></i>
+											廣告區管理
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="has_submenu">
+								<a>
+									<i class="icon-desktop"></i>實習業務與廠商管理
+									<span class="caret pull-right"></span>
+								</a>
+								<ul>
+									<li>
+										<a href="serSkill.html">
+											<i class="icon-double-angle-right"></i>
+											核心技能管理
+										</a>
+									</li>
+									<li>
+										<a href="serCourse.html">
+											<i class="icon-double-angle-right"></i>
+											課程管理
+										</a>
+									</li>
+									<li>
+										<a href="serPlan.html">
+											<i class="icon-double-angle-right"></i>
+											實習計劃書管理
+										</a>
+									</li>
+									<li>
+										<a href="serCompany.html">
+											<i class="icon-double-angle-right"></i>
+											廠商管理
+										</a>
+									</li>
+									<li>
+										<a href="serVacancies.html">
+											<i class="icon-double-angle-right"></i>
+											職缺管理
+										</a>
+									</li>
+									<li>
+										<a href="serCoutch.html">
+											<i class="icon-double-angle-right"></i>
+											輔導老師管理
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="has_submenu">
+								<a>
+									<i class="icon-desktop"></i>實習安排管理
+									<span class="caret pull-right"></span>
+								</a>
+								<ul>
+									<li>
+										<a href="serReg.html">
+											<i class="icon-double-angle-right"></i>
+											實習志願登記
+										</a>
+									</li>
+									<li>
+										<a href="serDistri.html">
+											<i class="icon-double-angle-right"></i>
+											分發與面試管理
+										</a>
+									</li>
+									<li>
+										<a href="serChange.html">
+											<i class="icon-double-angle-right"></i>
+											職缺異動管理
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="has_submenu current open">
+								<a>
+									<i class="icon-desktop"></i>實習階段管理
+									<span class="caret pull-right"></span>
+								</a>
+								<ul>
+									<li class="active">
+										<a href="SerCalendar.html">
+											<i class="icon-double-angle-right"></i>
+											學生班表管理
+										</a>
+									</li>
+									<li>
+										<a href="serStdT.html">
+											<i class="icon-double-angle-right"></i>
+											實習作業與心得管理
+										</a>
+									</li>
+									<li>
+										<a href="serCmp_Que.html">
+											<i class="icon-double-angle-right"></i>
+											廠商滿意度調查
+										</a>
+									</li>
+									<li>
+										<a href="serForum.html">
+											<i class="icon-double-angle-right"></i>
+											實習討論區
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="has_submenu">
+								<a>
+									<i class="icon-desktop"></i>訪視輔導與評分管理
+									<span class="caret pull-right"></span>
+								</a>
+								<ul>
+									<li>
+										<a href="serVis_Itiner.html">
+											<i class="icon-double-angle-right"></i>
+											訪視行程管理
+										</a>
+									</li>
+									<li>
+										<a href="serVis_Record.html">
+											<i class="icon-double-angle-right"></i>
+											訪視輔導紀錄
+										</a>
+									</li>
+									<li>
+										<a href="SerVisitSpecial.html">
+											<i class="icon-double-angle-right"></i>
+											訪視特殊狀況記錄
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="icon-double-angle-right"></i>
+											實習老師評分管理
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="icon-double-angle-right"></i>
+											實習廠商評分管理
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="has_submenu">
+								<a>
+									<i class="icon-desktop"></i>報表管理
+									<span class="caret pull-right"></span>
+								</a>
+								<ul>
+									<li>
+										<a href="#">
+											<i class="icon-double-angle-right"></i>
+											實習計畫書匯出
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="icon-double-angle-right"></i>
+											實習人數統計
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="icon-double-angle-right"></i>
+											學生實習報告總表
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="icon-double-angle-right"></i>
+											學生滿意度調查統計
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="icon-double-angle-right"></i>
+											廠商滿意度調查統計
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="icon-double-angle-right"></i>
+											實習成績計算彙總表
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<!---- 左方列表頁 to End ---->
+					</div>
+				</div>
+				<!-- Sidebar ends -->
+				
+				<!-- Mainbar starts -->
+				<div class="mainbar">
+				
+					<!---- 頁面Header區塊 ---->
+					<div class="page-head">
+						<div class="container">
+							<div class="row">
+							
+								<!---- header左邊文字 ---->
+								<div class="col-md-3 col-sm-6 col-xs-6">
+									<h2>
+										<i class="icon-desktop"></i>
+										系辦公室
+									</h2>
+								</div>
+								<!---- header左邊文字 to End ---->
+								
+								<div class="clearfix"></div>
+							</div>
+						</div>
+					</div>
+					<!---- 頁面Header區塊 to End ---->
+									
+					<!---- 單元欄 ---->
+					<div class="blue-block">
+						<div class="page-title">
+							<h3 class="pull-left">
+								<i class="icon-desktop"></i>
+								分發與面試管理
+							</h3> 	
+							<div class="breads pull-right">
+								<a>實習安排管理 </a>/ 分發與面試管理
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+					<!---- 單元欄 to End ---->
+					
+					<!---- 內文資料欄 ---->
+                    <div class="container">
+                        <div class="page-content page-form">
+                            <div class="col-lg-12">
+                            <form class="form-horizontal" role="form">
+                                <div class="widget">
+                                    <div class="widget-head green">
+                                        <h5 class="pull-left">
+                                            <span class="icon-edit"></span>
+                                            編輯資料
+                                        </h5>
+                                        <div class="goback">
+                                            <button class="btn btn-default btn-sm" id="btnBack" onclick="GoandBack()" type="button">整月份</button>
+                                            <button class="btn btn-default btn-sm" id="btnBack" onclick="GoandBack()" type="button">工作日</button>
+                                            <button class="btn btn-default btn-sm" id="btnBack" onclick="GoandBack()" type="button">周末</button>
+                                            <button class="btn btn-default btn-sm" id="btnBack" onclick="GoandBack()" type="button">新增</button>
+                                            <button class="btn btn-default btn-sm" id="btnBack" onclick="GoandBack()" type="button">刪除</button>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    <div class="widget-body">
+                                        <!--<div class="page-content page-calendar">-->
+                                        <!-- Below line produces calendar. I am using FullCalendar plugin. -->
+                                        <div id="calenda"></div>
+                                        <input type="hidden" value="" id="hiddate" />
+                                        <input type="hidden" value="" id="hidchoosen" />
+                                        <!--</div>-->
+                                    </div>
+                                    <!--<div class="col-lg-4">
+                                        <div class="page-content page-form">
+                                            <form class="form-horizontal" role="form">
+                                                <div class="widget">
+                                                    <div class="widget-head green">
+                                                        <h5 class="pull-left">
+                                                            <span class="icon-edit"></span>
+                                                            編輯資料
+                                                        </h5>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                    <div class="widget-body">
+                                                        <div class="form-group">
+                                                            <label class="col-lg-4 control-label">使用預設日期</label>
+                                                            <div class="col-lg-8">
+                                                                <div class="radio-inline"><input type="radio" class="" value="All">整月份</div>
+                                                                <div class="radio-inline"><input type="radio" class="" value="work">工作日</div>
+                                                                <div class="radio-inline"><input type="radio" class="" value="weekend">周末</div>
+                                                                <div class="radio-inline"><input type="radio" class="" value="self">自訂</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-lg-4 control-label">實習起始時間</label>
+                                                            <div class="col-lg-8">
+                                                                <input type="text" class="form-control" placeholder="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-lg-4 control-label">實習結束時間</label>
+                                                            <div class="col-lg-8">
+                                                                <input type="text" class="form-control" placeholder="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="widget-foot">
+                                                        <button class="btn btn-default" id="btnSave" onclick="Save();" type="button">儲存</button>
+                                                        <button type="button" class="btn btn-default" onclick="ClearForm();">清除</button>
+                                                    </div>
+                                                </div>
+                                                <div class="widget">
+                                                    <div class="widget-head red">
+                                                        <h5 class="pull-left">
+                                                            <span class="icon-edit"></span>
+                                                            刪除資料
+                                                        </h5>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                    <div class="widget-body">
+                                                        <div class="form-group">
+                                                            <label class="col-lg-1 control-label"></label>
+                                                            <label class="col-lg-11">刪除所有選取日期內的資料</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="widget-foot">
+                                                        <button class="btn btn-default" id="btnSave" onclick="Save();" type="button">刪除</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>-->
+                                </div>
+                                </form>
+                            </div>                              
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!---- 內文資料欄 to End ---->
+                    <!-- Mainbar ends -->
+		</div>
+
+		<!-- Javascript files -->
+		<!-- jQuery -->
+		<script src="js/jquery.js"></script>
+		
+		<!-- Bootstrap JS -->
+		<script src="js/bootstrap.min.js"></script>
+		
+		<!-- Sparkline for Mini charts -->
+		<script src="js/sparkline.js"></script>
+		
+		<!-- jQuery UI -->
+		<script src="js/jquery-ui-1.10.2.custom.min.js"></script>
+		
+		<!-- jQuery flot -->
+		<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../js/excanvas.min.js"></script><![endif]-->
+		<script src="js/jquery.flot.min.js"></script>
+		<script src="js/jquery.flot.pie.min.js"></script>
+		<script src="js/jquery.flot.resize.min.js"></script>
+		
+		<!-- jQuery Knob -->
+		<script src="js/jquery.knob.js"></script>
+		
+		<!-- jQuery Data Tables -->
+		<script src="js/jquery.dataTables.min.js"></script>
+		
+		<!-- jQuery Knob -->
+		<script src="js/bootstrap-switch.min.js"></script>
+		
+		<!-- jQuery Knob -->
+		<script src="js/jquery.rateit.min.js"></script>
+		
+		<!-- jQuery prettyPhoto -->
+		<script src="js/jquery.prettyPhoto.js"></script>
+		
+		<!-- jquery slim scroll -->
+		<script src="js/jquery.slimscroll.min.js"></script>
+		
+		<!-- jQuery gritter -->
+		<script src="js/jquery.gritter.min.js"></script>
+		
+		<!-- jQuery full calendar -->
+		<script src="js/fullcalendar.min.js"></script>
+		
+		<!-- Respond JS for IE8 -->
+		<script src="js/respond.min.js"></script>
+		
+		<!-- HTML5 Support for IE -->
+		<script src="js/html5shiv.js"></script>
+		
+		<!-- Custom JS -->
+		<!--<script src="../js/custom.notification.js"></script>-->
+		<script src="js/custom.js"></script>
+		
+		<!-- Javascript for this page -->
+		<script type="text/javascript">
+            $(function () {
+                $('#calenda').fullCalendar({
+                    header: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'month,agendaWeek,agendaDay'
+                    },
+                    dayClick: function (date, jsEvent, view) {
+                        // change the day's background color just for fun
+                        $(this).css('background-color', '#EDEDED');
+
+                        //藏日期到hid
+                        var hidden = $('#hidCalendar').val();
+                        var Cdate = date.toLocaleDateString();
+                        $('#hiddate').val((hidden ? (hidden + ',' + Cdate) : Cdate));
+                    }
+
+                });
+            });
+			$(function() {
+				var d1 = [[0, 1], [1, 2], [2, 3], [3, 4],[4, 5], [5, 6], [6, 5], [7, 6],[8, 7], [9, 6], [10, 7], [11, 8],[12, 9], [13, 9], [14, 9], [15, 8],[16, 8], [17, 9], [18, 10], [19, 10],[20, 9], [21, 8], [22, 7], [23, 8],[24, 9], [25, 8], [26, 6], [27, 4],[28, 2]];
+				var options = {
+				series: {
+					lines: {
+						show: true, fill: true, fillColor: "rgba(113,214,232,0.5)", lineWidth:1
+					},
+					points: {
+						show: true, fill: true, fillColor: "rgba(113,214,232,0.5)"
+					}
+				},
+				colors :["rgba(255,255,255,1)"],
+				grid: {
+					color: "#fff", borderWidth: 0, minBorderMargin: 5
+				},
+				xaxis: {
+					font: {
+							size: 10,
+							color: "rgba(255,255,255,0.8)"
+						}
+				},
+				yaxis: {
+					font: {
+							size: 10,
+							color: "rgba(255,255,255,0.8)"
+						}
+				}
+				};
+				$.plot("#quick-chart", [ d1 ], options);
+			});
+				
+			$(function() {
+				var d1 = [[0,0], [1, 2], [2, 0], [3, 3], [4, 1], [5, 3], [6, 2], [7, 1], [8, 2], [9, 3], [10, 1], [11,2], [12,0]];
+				var options = {
+				series: {
+					lines: {
+						show: true, fill: false, lineWidth:1
+					},
+					points: {
+						show: true, fill: false, radius:2
+					}
+				},
+				colors :["rgba(255,255,255,1)"],
+				grid: {
+					color: "#fff", borderWidth: 0, minBorderMargin: 8
+				},
+				xaxis: {
+					show: false
+				},
+				yaxis: {
+					show: false
+				}
+				};
+				$.plot("#ecg-chart", [ d1 ], options);
+			});
+		</script>
+	</body>	
+</html>
